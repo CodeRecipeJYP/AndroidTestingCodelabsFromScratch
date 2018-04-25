@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.asuscomm.yangyinetwork.testingcodelabs.R;
-import com.asuscomm.yangyinetwork.testingcodelabs.debug.Log;
+import com.asuscomm.yangyinetwork.testingcodelabs.utils.Log;
 
 public class StatisticsActivity extends AppCompatActivity {
     @Override

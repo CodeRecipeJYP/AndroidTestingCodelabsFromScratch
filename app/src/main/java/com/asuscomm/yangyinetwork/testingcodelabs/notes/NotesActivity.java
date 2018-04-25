@@ -4,6 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
@@ -12,7 +15,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.asuscomm.yangyinetwork.testingcodelabs.R;
-import com.asuscomm.yangyinetwork.testingcodelabs.debug.Log;
+import com.asuscomm.yangyinetwork.testingcodelabs.utils.Log;
 import com.asuscomm.yangyinetwork.testingcodelabs.statistics.StatisticsActivity;
 
 public class NotesActivity extends AppCompatActivity {
@@ -36,6 +39,20 @@ public class NotesActivity extends AppCompatActivity {
         if (navigationView != null) {
             setupDrawerContent(navigationView);
         }
+
+        if (null == savedInstanceState) {
+            initFragment(NotesFragment.newInstance());
+        } else {
+            Log.d(savedInstanceState.toString());
+        }
+    }
+
+    private void initFragment(Fragment notesFragment) {
+        // Add the NotesFragment to the layout
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        transaction.add(R.id.contentFrame, notesFragment);
+        transaction.commit();
     }
 
     @Override

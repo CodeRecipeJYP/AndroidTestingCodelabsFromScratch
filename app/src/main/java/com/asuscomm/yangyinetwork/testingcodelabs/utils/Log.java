@@ -1,4 +1,4 @@
-package com.asuscomm.yangyinetwork.testingcodelabs.debug;
+package com.asuscomm.yangyinetwork.testingcodelabs.utils;
 
 import android.app.ActivityManager;
 import android.content.Context;
